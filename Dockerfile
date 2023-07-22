@@ -1,13 +1,13 @@
+# for package mvn
+# $ docker build --target builder -t demo-springboot-builder .
 FROM openjdk:17-jdk-alpine AS builder
 WORKDIR /workspace
 COPY . /workspace/
 RUN cd /workspace
-RUN pwd
-RUN ls -l
 RUN chmod +x mvnw
 RUN ./mvnw clean package
 
-
+# for build docker image
 FROM openjdk:17-jdk-alpine
 WORKDIR /demo-springboot
 VOLUME /tmp
