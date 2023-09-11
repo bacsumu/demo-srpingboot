@@ -13,7 +13,7 @@ WORKDIR /demo-springboot
 VOLUME /tmp
 ARG JAVA_OPTS
 ENV JAVA_OPTS=$JAVA_OPTS
-COPY --from=builder /wdorkspace/target/demo-springboot-0.0.1-SNAPSHOT.jar workspace.jar
+COPY --from=builder /wdorkspace/target/demo-springboot-*.jar workspace.jar
 EXPOSE 8080
 ENTRYPOINT exec java $JAVA_OPTS -jar workspace.jar
 # For Spring-Boot project, use the entrypoint below to reduce Tomcat startup time.

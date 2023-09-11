@@ -40,7 +40,6 @@ jobs:
         mvn -B package --file pom.xml
     - name: Build with Docker
       run: |
-        echo "token : $DEMO_REPO_TOKEN"
         echo $DEMO_REPO_TOKEN | docker login ghcr.io -u $USERNAME --password-stdin
         docker build --tag $REGISTRY:$TAG_NAME  -f Dockerfile .
         docker images
