@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class DemoController {
     @RequestMapping(value = "/")
     public String home(){
-        return "hello home";
+        return "this is github springboot demo page";
     }
 }
