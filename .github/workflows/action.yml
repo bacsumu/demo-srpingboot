@@ -32,6 +32,11 @@ jobs:
         pwd
         ls -l
         mvn -B package --file pom.xml
+    - name: Build with Docker
+      run: |
+        echo ${secret.DEMO_REPO_TOKEN} | docker login ghcr.io -u USERNAME --password-stdin
+        docker build --tag ghcr.io/bacsumu/demo-springboot:latest  -f Dockerfile .
+        docker push ghcr.io/bacsumu/demo-springboot:latest
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     #- name: Update dependency graph
