@@ -33,7 +33,7 @@ jobs:
       with:
         path: ~/.m2
         key: |
-          ${{ runner.os }}-maven-${{ hashFiles('**/package-lock.json') }}
+          ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
           ${{ runner.os }}-maven-
     # install jdk
     - name: Set up JDK 17
