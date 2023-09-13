@@ -11,6 +11,9 @@ spec:
     repoURL: https://github.com/bacsumu/demo-srpingboot.git
     targetRevision: main
     path: charts/demo-springboot
+    helm:
+      valueFiles:
+      - values-dev.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: bacsumu
