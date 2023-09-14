@@ -5,13 +5,13 @@ serviceAccount:
 service:
   type: ClusterIP
 
-resources:
-  requests:
-    memory: "64Mi"
-    cpu: "250m"
+resources: 
   limits:
-    memory: "64Mi"
-    cpu: "250m"
+    cpu: 100m
+    memory: 128Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi
 
 tolerations:
 - key: NodePurpose
