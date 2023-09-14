@@ -2,6 +2,9 @@
 service:
   type: NodePort
 
+image:
+  pullPolicy: Allways
+
 autoscaling:
   enabled: true
   minReplicas: 2
