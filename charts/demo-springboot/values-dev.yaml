@@ -1,5 +1,12 @@
+# on-premiss 장비 k8s에 배포 용
 service:
   type: NodePort
+
+autoscaling:
+  enabled: true
+  minReplicas: 2
+  maxReplicas: 10
+  targetCPUUtilizationPercentage: 80
 
 ingress:
   enabled: false

@@ -1,7 +1,4 @@
-serviceAccount:
-  create: true
-  name: "demo"
-
+# aws eks에 배포 용
 service:
   type: ClusterIP
 
