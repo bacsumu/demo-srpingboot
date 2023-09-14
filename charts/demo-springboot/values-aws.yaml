@@ -5,13 +5,13 @@ service:
 image:
   pullPolicy: Always
 
-resources: 
-  limits:
-    cpu: 10m
-    memory: 200Mi
-  requests:
-    cpu: 10m
-    memory: 200Mi
+#resources: 
+#  limits:
+#    cpu: 10m
+#    memory: 200Mi
+#  requests:
+#    cpu: 10m
+#    memory: 200Mi
 
 tolerations:
 - key: NodePurpose
