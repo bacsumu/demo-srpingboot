@@ -1,0 +1,27 @@
+# argocd 설치 후 아래 명령어로 배포 application 등록
+# kubectl -f https://github.com/bacsumu/demo-srpingboot/blob/main/argocd-application-???.yaml
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: demo-springboot-github
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/bacsumu/demo-srpingboot.git
+    targetRevision: main
+    path: charts/demo-springboot
+    helm:
+      valueFiles:
+      - values-dev.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: bacsumu
+  syncPolicy:
+    automated: 
+      prune: true 
+      selfHeal: true   
+    syncOptions:
+      - CreateNamespace=true
