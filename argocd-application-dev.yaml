@@ -1,5 +1,5 @@
 # argocd 설치 후 아래 명령어로 배포 application 등록
-# kubectl -f https://github.com/bacsumu/demo-srpingboot/blob/main/argocd-application-???.yaml
+# kubectl apply -f https://raw.githubusercontent.com/bacsumu/demo-srpingboot/main/argocd-application-dev.yaml
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
