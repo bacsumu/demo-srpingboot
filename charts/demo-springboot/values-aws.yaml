@@ -48,6 +48,7 @@ ingress:
     alb.ingress.kubernetes.io/backend-protocol: "HTTP"
     alb.ingress.kubernetes.io/load-balancer-attributes: "deletion_protection.enabled=false"
   hosts:
-  - paths:
-    - path: /
-      pathType: Prefix
+    - host: "*"
+      paths:
+      - path: /
+        pathType: Prefix
