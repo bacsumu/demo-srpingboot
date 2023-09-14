@@ -18,7 +18,7 @@ spec:
       - values-aws.yaml
   destination:
     server: https://kubernetes.default.svc
-    namespace: default
+    namespace: demo
   syncPolicy:
     automated: 
       prune: true 
