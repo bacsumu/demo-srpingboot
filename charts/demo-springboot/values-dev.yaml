@@ -3,7 +3,7 @@ service:
   type: NodePort
 
 image:
-  pullPolicy: Allways
+  pullPolicy: Always
 
 autoscaling:
   enabled: true
