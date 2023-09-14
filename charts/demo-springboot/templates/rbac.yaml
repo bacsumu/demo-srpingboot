@@ -1,0 +1,23 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  namespace: {{ .Release.Namespace }}
+  name: demo-springboot-role
+rules:
+- apiGroups: [""] # "" indicates the core API group
+  resources: ["*"]
+  verbs: ["*"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: demo-springboot-rolebinding
+  namespace: {{ .Release.Namespace }}
+subjects:
+- kind: User
+  name: {{ include "demo-springboot.serviceAccountName" . }}
+  apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: Role
+  name: demo-springboot-role
+  apiGroup: rbac.authorization.k8s.io
