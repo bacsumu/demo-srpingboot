@@ -8,10 +8,10 @@ image:
 # resources: 
 #   limits:
 #     cpu: 100m # 1000ms가 1 vCore (가상 CPU 코어)
-#     memory: 200M
+#     memory: 200Mi
 #   requests:
 #     cpu: 50m
-#     memory: 100M
+#     memory: 100Mi
 
 tolerations:
 - key: NodePurpose
@@ -28,7 +28,17 @@ affinity:
           operator: In
           values:
           - service
-
+  podAntiAffinity:
+    preferredDuringSchedulingIgnoredDuringExecution:
+    - weight: 100
+      podAffinityTerm:
+        labelSelector:
+          matchExpressions:
+          - key: app.kubernetes.io/instance
+            operator: In
+            values:
+            - demo-springboot-github
+          
 autoscaling:
   enabled: true
   minReplicas: 2
