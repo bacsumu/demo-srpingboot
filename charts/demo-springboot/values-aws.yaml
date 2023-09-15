@@ -5,13 +5,13 @@ service:
 image:
   pullPolicy: Always
 
-resources: 
-  limits:
-    cpu: 100m # 1000ms가 1 vCore (가상 CPU 코어)
-    memory: 200M
-  requests:
-    cpu: 50m
-    memory: 100M
+# resources: 
+#   limits:
+#     cpu: 100m # 1000ms가 1 vCore (가상 CPU 코어)
+#     memory: 200M
+#   requests:
+#     cpu: 50m
+#     memory: 100M
 
 tolerations:
 - key: NodePurpose
