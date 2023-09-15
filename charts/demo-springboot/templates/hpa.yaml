@@ -29,4 +29,25 @@ spec:
           type: Utilization
           averageUtilization: {{ .Values.autoscaling.targetMemoryUtilizationPercentage }}
     {{- end }}
+  behavior:
+    scaleUp:
+      stabilizationWindowSeconds: 0     # 리소스 임계치 도달시 즉시 pod 수 scaleup
+      selectPolicy: Max                 # policies 조건 중 최대값을 선택 (더 빨리 pod 증가 처리)
+      policies:
+      - type: Pods
+        value: 2
+        periodSeconds: 5 
+      - type: Percent
+        value: 10
+        periodSeconds: 5
+    scaleDown:
+      stabilizationWindowSeconds: 30    # 빈번한 scaleDown -> up 반복을 막기위한 5분동안 리소스 사용율을 확인 후 scaledown 처리
+      selectPolicy: Min                 # policies 조건 중 최소값을 선택 (느리게 pod 감소 처리)
+      policies:                         #30초 동안 2개씩 pod를 delete하거나 현재 pod의 10% 중 작은값을 수행
+      - type: Pods
+        value: 2
+        periodSeconds: 30   
+      - type: Percent
+        value: 10
+        periodSeconds: 30
 {{- end }}
