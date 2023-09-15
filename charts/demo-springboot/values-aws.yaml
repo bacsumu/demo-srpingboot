@@ -60,7 +60,7 @@ ingress:
    alb.ingress.kubernetes.io/backend-protocol: "HTTP"
    alb.ingress.kubernetes.io/load-balancer-attributes: 'deletion_protection.enabled=false'
  hosts:
-   - host: "*.bacsumu.bizmsg.click"
+   - host: *.bacsumu.bizmsg.click
      paths:
      - path: /
        pathType: Prefix
