@@ -6,8 +6,6 @@ image:
   pullPolicy: Always
 
 resources:
-  limits:
-    cpu: 50m
   requests:
     cpu: 50m
 
