@@ -5,11 +5,10 @@ service:
 image:
   pullPolicy: Always
 
-# resources: 
-#   limits:
-#     cpu: 100m # 1000ms가 1 vCore (가상 CPU 코어)
-#   requests:
-#     cpu: 50m
+resources:
+  limits:
+  requests:
+    cpu: 50m
 
 tolerations:
 - key: NodePurpose
@@ -54,13 +53,13 @@ autoscaling:
 #    alb.ingress.kubernetes.io/scheme: internet-facing
 #    alb.ingress.kubernetes.io/target-type: ip
 #    alb.ingress.kubernetes.io/security-groups: sg-050ec948e1e43f334
-#    alb.ingress.kubernetes.io/healthcheck-path: '/'
+#    alb.ingress.kubernetes.io/healthcheck-path: /
 #    alb.ingress.kubernetes.io/healthcheck-interval-seconds: 10
 #    alb.ingress.kubernetes.io/listen-ports: [{"HTTP": 80}]
 #    alb.ingress.kubernetes.io/backend-protocol: "HTTP"
 #    alb.ingress.kubernetes.io/load-balancer-attributes: 'deletion_protection.enabled=false'
 #  hosts:
-#    - host: *.bacsumu.bizmsg.click
+#    - host: bacsumu.bizmsg.click
 #      paths:
 #      - path: /
 #        pathType: Prefix
