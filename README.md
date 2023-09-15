@@ -8,6 +8,6 @@
  - image url : docker pull ghcr.io/bacsumu/demo-springboot:latest
 5. helm chart 생성
  - charts/demo-springboot
-5. argocd 설치된 k8s에서 application 등록 및 CD 적용
+6. argocd 설치된 k8s에서 application 등록 및 CD 적용
  - AWS 테스트 : kubectl apply -f https://raw.githubusercontent.com/bacsumu/demo-srpingboot/main/argocd-application-aws.yaml
  - On-premise 테스트 : kubectl apply -f https://raw.githubusercontent.com/bacsumu/demo-srpingboot/main/argocd-application-dev.yaml
