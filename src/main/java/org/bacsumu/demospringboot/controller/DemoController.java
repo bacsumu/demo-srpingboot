@@ -10,6 +10,10 @@ public class DemoController {
     @RequestMapping(value = "/")
     public String home(){
         log.info("home is called");
+        // 시스템 부하를 위해 loop 처리
+        for(int i=0,j=0; i < 10000; i++){
+            j = j * i;
+        }
         return "this is github springboot demo page";
     }
 }
