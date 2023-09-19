@@ -48,7 +48,8 @@ jobs:
       run: |
         pwd
         ls -l
-        ./gradlew build
+        which gradle
+        gradle build
     # docker build
     - name: Build with Docker
       run: |
