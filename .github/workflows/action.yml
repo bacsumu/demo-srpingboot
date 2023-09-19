@@ -50,7 +50,7 @@ jobs:
         ls -l
         which gradle
         chmod u+x gradlew
-        ./gradlew build
+        ./gradlew bootJar
     # docker build
     - name: Build with Docker
       run: |
