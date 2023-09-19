@@ -15,6 +15,7 @@ ARG JAVA_OPTS
 ENV JAVA_OPTS=$JAVA_OPTS
 #COPY --from=builder /wdorkspace/target/demo-springboot-*.jar workspace.jar
 RUN pwd
+RUN ls -l ./build/libs/
 COPY ./build/libs/demo-springboot-*.jar /demo-springboot/workspace.jar
 RUN ls -l /demo-springboot
 EXPOSE 8080
