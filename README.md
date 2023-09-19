@@ -1,7 +1,7 @@
 # demo-srpingboot
 
 1. springboot API 서버 샘플 코드
-2. Maven 프로젝트 설정(pom.xml)
+2. Gradle 프로젝트 설정(build.gradle)
 3. github workflow CI 적용 (.github/workflows/action.yml)
 4. docker image build 후 github package 업로드
  - package url : https://github.com/users/bacsumu/packages/container/package/demo-springboot
