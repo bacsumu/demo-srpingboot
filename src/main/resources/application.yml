@@ -2,4 +2,4 @@ server:
   port: 8080
 jwt:
   secretKey: 1234567890abcdefghijklmnopqrstuvwxyz
-  expireTime: 3600
+  expireTime: 86400000  # 1000 * 60 * 60 * 24
